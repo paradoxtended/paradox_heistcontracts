@@ -1,0 +1,45 @@
+$width: 1200px;
+$height: 700px;
+$radius: 25px;
+$outline-color: #8d8d8d;
+
+.main-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: $width;
+    height: $height;
+    outline: solid $outline-color 2px;
+    border-radius: $radius;
+    background-color: #0F0F0F;
+}
+
+.main-screen {
+    position: absolute;
+    overflow: hidden;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: calc($width - 70px);
+    height: calc($height - 70px);
+    border-radius: calc($radius - 15px);
+    background: linear-gradient(#17171E, #17171D);
+}
+
+.main-button {
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(90deg, #555378, #3F3D71);
+    padding: 10px 25px;
+    border-radius: 7px;
+    font-weight: 500;
+}
+
+.main-button:hover {
+    background: linear-gradient(90deg, #5e5c85, #434279);
+}
