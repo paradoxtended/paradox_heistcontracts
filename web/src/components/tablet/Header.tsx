@@ -1,3 +1,4 @@
+import type { TabsProps } from '../../typings';
 import type { User } from '../../typings/user';
 import { locale } from '../../utils/locale';
 import './Header.scss';
@@ -5,12 +6,15 @@ import './Header.scss';
 const Header: React.FC<{
     user: User;
     exit: () => void;
-}> = ({ user, exit }) => {
+    changeTab: (tab: TabsProps) => any;
+    currentTab: TabsProps;
+}> = ({ user, exit, changeTab, currentTab }) => {
     return (
         <div className='header-wrapper'>
             <div className='flex items-center gap-4'>
-                <div className="header-image">
+                <div className="header-image" onClick={() => changeTab('settings')}>
                     <img src={user.image} alt="user-profile" />
+                    <i className='fa-solid fa-pen'></i>
                 </div>
 
                 <div className='block'>
@@ -39,7 +43,8 @@ const Header: React.FC<{
                 )}
             </div>
             
-            <i className="fa-solid fa-xmark text-white text-xl cursor-pointer" onClick={exit}></i>
+            {currentTab === 'main' ? <i className="fa-solid fa-xmark text-white text-2xl mr-2.5 cursor-pointer" onClick={exit}></i>
+            : <button className='bg-[#2E2F41] text-white font-medium px-5 py-1 text-lg rounded-sm mr-2.5' onClick={() => changeTab('main')}>{locale('back')}</button>}
         </div>
     )
 };

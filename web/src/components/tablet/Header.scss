@@ -18,10 +18,32 @@ $image-width: 45px;
     width: fit-content;
     height: fit-content;
     border-radius: 100%;
+    position: relative;
+    cursor: pointer;
+}
+
+.header-image i {
+    color: #ffffff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.2s;
+    pointer-events: none;
+}
+
+.header-image:hover img {
+    opacity: 0.5;
+}
+
+.header-image:hover i {
+    opacity: 1;
 }
 
 .header-image img {
     border-radius: 100%;
     width: $image-width;
     height: $image-height;
+    transition: opacity 0.2s;
 }
