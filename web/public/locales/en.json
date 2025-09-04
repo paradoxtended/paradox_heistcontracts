@@ -1,5 +1,4 @@
 {
-    "heist_contracts": "Heist Contracts",
     "loading": "Loading, please wait...",
     "back": "Back",
     "logged_as": "Logged in as %s",
@@ -16,5 +15,7 @@
     "settings_change_image": "Change profile picture",
     "settings_change_image_description1": "Your image should abide by the server rules.",
     "settings_change_image_description2": "The allowed image formats are .jpg, .jpeg, .png .webp",
-    "settings_change_image_input": "Image url"
+    "settings_change_image_input": "Image url",
+    "heist_contracts": "Heist Contracts",
+    "heist_contracts_description": "All of the available heist/robbery contracts."
 }
