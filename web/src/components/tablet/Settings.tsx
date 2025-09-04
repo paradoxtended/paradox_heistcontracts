@@ -2,6 +2,7 @@ import { useState } from "react";
 import type { User } from "../../typings/user";
 import { locale } from "../../utils/locale";
 import Fade from "../utils/transitions/Fade";
+import { fetchNui } from "../../utils/fetchNui";
 
 type SettingType = 'nickname' | 'image';
 
@@ -12,13 +13,33 @@ type SettingType = 'nickname' | 'image';
 
 const Settings: React.FC<{
     user: User;
-}> = ({ user }) => {
+    setUser: (user: User) => void;
+}> = ({ user, setUser }) => {
     const [settingType, setSettingType] = useState<SettingType>();
     const [query, setQuery] = useState('');
 
     // @todo fetchNui to change nickname or image (profile picture)
-    const handleChange = () => {
+    const handleChange = async () => {
+        const icon = document.getElementById('settings-confirm');
         
+        if (icon === null || icon.className === 'icon-loader')
+            return;
+
+        icon.className = 'icon-loader';
+
+        const response = await fetchNui('edit_profile', {
+            settingType: settingType,
+            value: query
+        })
+
+        if (response && settingType) {
+            setUser({
+                ...user,
+                [settingType]: query
+            });
+        }
+
+        icon.className = 'fa-solid fa-check';
     }
 
     return (
@@ -58,7 +79,7 @@ const Settings: React.FC<{
                     <div className="flex items-center gap-2">
                         <input type="text" placeholder={locale(`settings_change_${settingType}_input`)} defaultValue={user[settingType as SettingType]} key={settingType}
                             onChange={(e) => setQuery(e.target.value)}/>
-                        <button className="main-button" style={{ padding: '11px 15px' }} onClick={() => handleChange()}><i className="fa-solid fa-check"></i></button>
+                        <button className="main-button" style={{ padding: '11px 15px' }} onClick={() => handleChange()}><i className="fa-solid fa-check px-[2px]" id="settings-confirm"></i></button>
                     </div>
                 </div>
             </Fade>

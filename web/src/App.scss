@@ -58,3 +58,17 @@ input:focus {
 input::placeholder {
     font-weight: 500;
 }
+
+.icon-loader {
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  border-top: 3px solid transparent;
+  width: 18px;
+  height: 18px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

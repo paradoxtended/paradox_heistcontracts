@@ -102,7 +102,10 @@ const App: React.FC = () => {
             <Fade in={loading}><div><Loader /></div></Fade>
 
             <Fade in={!loading && currentTab === 'settings'}><div>
-              <Settings user={user as User} />  
+              <Settings 
+                user={user as User}
+                setUser={setUser}
+              />  
             </div></Fade>
           </div>
         </div>
