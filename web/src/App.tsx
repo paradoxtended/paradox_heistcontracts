@@ -9,6 +9,8 @@ import Fade from './components/utils/transitions/Fade';
 import { fetchNui } from './utils/fetchNui';
 import Header from './components/Header';
 import Main from './components/Main';
+import Settings from './components/Settings';
+import Loading from './components/Loading';
 
 debugData<Initialization>([
   {
@@ -25,7 +27,6 @@ debugData<MainProps>([
     data: {
       user: {
         nickname: 'PPaull.',
-        time: '8:54 AM',
         image: 'https://i.postimg.cc/BnFQFgrd/PRP.png',
         isAdmin: true,
         firstLogged: '3/9/2025',
@@ -89,10 +90,16 @@ const App: React.FC = () => {
     <>
       <Fade in={visible && user !== undefined}>
         <div className='main-wrapper'>
-          <Header user={user as User} />
+          <Header user={user as User} changeTab={changeTab} />
+
+          {loading && <Loading />}
 
           <Fade in={!loading && currentTab === 'main'}><div>
-            <Main user={user as User} />
+            <Main user={user as User} changeTab={changeTab} />
+          </div></Fade>
+
+          <Fade in={!loading && currentTab === 'settings'}><div>
+            <Settings user={user as User} />  
           </div></Fade>
         </div>
       </Fade>

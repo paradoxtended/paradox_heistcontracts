@@ -1,3 +1,11 @@
 {
-    
+    "welcome": "Welcome",
+    "heist_contracts": "Heist Contracts",
+    "heist_contracts_description": "Explore underground world of this city.",
+    "blackmarket": "Blackmarket",
+    "blackmarket_description": "Buy some illegal stuff or sell your belongings.",
+    "leaderboard": "Leaderboard",
+    "leaderboard_description": "View best gangsters and mobsters in this city.",
+    "admin_menu": "Admin Menu",
+    "admin_menu_description": "View all ongoing contracts or generate new contracts."
 }

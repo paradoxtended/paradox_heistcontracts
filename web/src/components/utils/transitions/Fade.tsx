@@ -10,7 +10,7 @@ const Fade: React.FC<Props> = (props) => {
   const nodeRef = useRef(null);
 
   return (
-    <CSSTransition in={props.in} nodeRef={nodeRef} classNames="transition-fade" timeout={200} unmountOnExit>
+    <CSSTransition in={props.in} nodeRef={nodeRef} classNames="transition-fade" timeout={100} unmountOnExit>
       {React.cloneElement(props.children, { ref: nodeRef })}
     </CSSTransition>
   );

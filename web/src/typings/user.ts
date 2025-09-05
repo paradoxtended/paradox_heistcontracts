@@ -3,7 +3,6 @@ export interface User {
     image: string;
     isAdmin: boolean;
     firstLogged: string;
-    time: string;
     stats: {
         coins: number;
         xp: number;
