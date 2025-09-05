@@ -1,21 +1,3 @@
 {
-    "loading": "Loading, please wait...",
-    "back": "Back",
-    "logged_as": "Logged in as %s",
-    "admin_menu": "Admin Menu",
-    "settings_user": "User: %s",
-    "settings_first_logged": "First logged in %s",
-    "settings_completed_heists": "You have successfully completed %s contracts!",
-    "settings_edit_username": "Edit username",
-    "settings_edit_profile_picture": "Edit profile picture",
-    "settings_change_nickname": "Change username",
-    "settings_change_nickname_description1": "Your username should abide by the server rules.",
-    "settings_change_nickname_description2": "You need to choose a unique username.",
-    "settings_change_nickname_input": "Your new username",
-    "settings_change_image": "Change profile picture",
-    "settings_change_image_description1": "Your image should abide by the server rules.",
-    "settings_change_image_description2": "The allowed image formats are .jpg, .jpeg, .png .webp",
-    "settings_change_image_input": "Image url",
-    "heist_contracts": "Heist Contracts",
-    "heist_contracts_description": "All of the available heist/robbery contracts."
+    
 }

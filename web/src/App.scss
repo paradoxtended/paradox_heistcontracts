@@ -1,7 +1,7 @@
-$width: 1200px;
-$height: 700px;
-$radius: 25px;
-$outline-color: #8d8d8d;
+$width: 1000px;
+$height: 600px;
+$radius: 7px;
+$background-color: linear-gradient(135deg, #303066, #000000);
 
 .main-wrapper {
     position: absolute;
@@ -10,65 +10,53 @@ $outline-color: #8d8d8d;
     transform: translate(-50%, -50%);
     width: $width;
     height: $height;
-    outline: solid $outline-color 2px;
     border-radius: $radius;
-    background-color: #0F0F0F;
-}
-
-.main-screen {
-    position: absolute;
+    background: $background-color;
     overflow: hidden;
-    z-index: 1;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: calc($width - 70px);
-    height: calc($height - 70px);
-    border-radius: calc($radius - 15px);
-    background: linear-gradient(#17171E, #17171D);
+    z-index: 0;
 }
 
-.main-button {
-    color: #ffffff;
+.main-wrapper::before {
+    content: '';
+    position: absolute;
+    left: -200px;
+    bottom: -200px;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, #303066 0%, transparent 90%);
+    filter: blur(100px);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Header */
+
+.header {
+    padding: 7px 20px;
+    background: #0f0f0f;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: solid #2c2c2c 1px;
+    color: #ffffff;
+    font-weight: 500;
+}
+
+.header div {
+    display: flex;
     align-items: center;
     gap: 10px;
-    background: linear-gradient(90deg, #555378, #3F3D71);
-    padding: 8px 30px;
-    border-radius: 7px;
-    font-weight: 500;
-    font-size: 17px;
 }
 
-.main-button:hover {
-    background: linear-gradient(90deg, #5e5c85, #434279);
+.header div i {
+    cursor: pointer;
+    transition: color 0.3s;
 }
 
-input {
-    background: #ffffff;
-    padding: 8px 15px;
-    border-radius: 8px;
-}
+.header div i:hover { color: #7474e6 }
 
-input:focus {
-    outline: none;
-}
+/* Main */
 
-input::placeholder {
-    font-weight: 500;
-}
-
-.icon-loader {
-  border: 2px solid #ffffff;
-  border-radius: 50%;
-  border-top: 3px solid transparent;
-  width: 18px;
-  height: 18px;
-  animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+main {
+    color: #ffffff;
 }

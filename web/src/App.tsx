@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import './App.scss';
-import Header from './components/tablet/Header';
 import { debugData } from './utils/debugData';
 import type { MainProps, Initialization, TabsProps } from './typings';
 import useNuiEvent from './utils/useNuiEvent';
@@ -8,9 +7,8 @@ import type { User } from './typings/user';
 import { loadLocales } from './utils/locale';
 import Fade from './components/utils/transitions/Fade';
 import { fetchNui } from './utils/fetchNui';
-import Loader from './components/tablet/Loader';
-import './components/tablet/Loader.css';
-import Settings from './components/tablet/Settings';
+import Header from './components/Header';
+import Main from './components/Main';
 
 debugData<Initialization>([
   {
@@ -27,6 +25,7 @@ debugData<MainProps>([
     data: {
       user: {
         nickname: 'PPaull.',
+        time: '8:54 AM',
         image: 'https://i.postimg.cc/BnFQFgrd/PRP.png',
         isAdmin: true,
         firstLogged: '3/9/2025',
@@ -90,24 +89,11 @@ const App: React.FC = () => {
     <>
       <Fade in={visible && user !== undefined}>
         <div className='main-wrapper'>
-          <div className='main-screen'>
-            <Header 
-              user={user as User} 
-              exit={() => closeTablet()}
-              changeTab={changeTab}
-              currentTab={currentTab} 
-            />
-            
-            {/* Every fade component must have div in it so it will fade the component correctly :weirdo: */}
-            <Fade in={loading}><div><Loader /></div></Fade>
+          <Header user={user as User} />
 
-            <Fade in={!loading && currentTab === 'settings'}><div>
-              <Settings 
-                user={user as User}
-                setUser={setUser}
-              />  
-            </div></Fade>
-          </div>
+          <Fade in={!loading && currentTab === 'main'}><div>
+            <Main user={user as User} />
+          </div></Fade>
         </div>
       </Fade>
     </>
