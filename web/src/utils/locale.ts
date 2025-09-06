@@ -4,7 +4,7 @@ type Locale = {
 
 let translations: Locale = {};
 
-export async function loadLocales(locale: string) {
+export async function loadLocales(locale: string = 'en') {
     const response = await fetch(`./locales/${locale}.json`);
     translations = await response.json();
 }

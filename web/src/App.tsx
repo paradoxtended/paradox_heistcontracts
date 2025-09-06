@@ -11,12 +11,15 @@ import Header from './components/Header';
 import Main from './components/Main';
 import Settings from './components/Settings';
 import Loading from './components/Loading';
+import { Items } from './store/items';
+import Blackmarket from './components/Blackmarket';
 
 debugData<Initialization>([
   {
     action: 'init',
     data: {
-      locale: 'en'
+      locale: 'en',
+      blackmarket: {}
     }
   }
 ]);
@@ -29,8 +32,7 @@ debugData<MainProps>([
         isAdmin: true,
         data: {
           name: 'PPaull.',
-          image: 'https://i.postimg.cc/BnFQFgrd/PRP.png',
-          description: 'Dangerous mobster 🎩'
+          image: 'https://i.postimg.cc/BnFQFgrd/PRP.png'
         },
         stats: {
           coins: 103507,
@@ -50,8 +52,9 @@ const App: React.FC = () => {
   const [user, setUser] = useState<User | undefined>();
   const [currentTab, setCurrentTab] = useState<TabsProps>('main');
 
-  useNuiEvent<Initialization>('init', async (data) => {
-    await loadLocales(data.locale);
+  useNuiEvent<Initialization>('init', async ({ locale, blackmarket }) => {
+    await loadLocales(locale);
+    for (const name in blackmarket) Items[name] = blackmarket[name];
   });
 
   useNuiEvent<MainProps>('open_tablet', (data) => {
@@ -103,6 +106,10 @@ const App: React.FC = () => {
 
           <Fade in={!loading && currentTab === 'settings'}><div>
             <Settings user={user as User} />  
+          </div></Fade>
+
+          <Fade in={!loading && currentTab === 'blackmarket'}><div>
+            <Blackmarket />
           </div></Fade>
         </div>
       </Fade>

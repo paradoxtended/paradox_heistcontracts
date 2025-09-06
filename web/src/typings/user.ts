@@ -3,7 +3,6 @@ export interface User {
     data: {
         name: string;
         image: string;
-        description: string;
     },
     stats: {
         coins: number;

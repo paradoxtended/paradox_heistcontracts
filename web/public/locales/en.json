@@ -9,14 +9,14 @@
     "admin_menu": "Admin Menu",
     "admin_menu_description": "View all ongoing contracts or generate new contracts.",
     "settings_header": "Your personal profile",
+    "user": "User: %s",
+    "first_logged": "First logged in on %s",
+    "completed_contracts": "You have successfully completed %s contracts!",
+    "edit_profile": "Edit profile",
     "name": "Name",
-    "name_description": "Your name may appear around heists you participate in. You can change it at any time.",
-    "name_input": "Your new name",
+    "name_description": "Your name may appear around contracts where you participate in. You can change it at any time.",
+    "change_name": "Change name",
     "image": "Profile picture",
-    "image_description": "Your profile picture. Profile picture should abide the server rules.",
-    "image_input": "Image url",
-    "bio": "Bio",
-    "bio_description": "A description of yourself.",
-    "bio_input": "Type here...",
-    "save_settings": "Save settings"
+    "image_description": "Your profile picture's url. The profile picture should abide the server rules.",
+    "change_image": "Change profile picture"
 }

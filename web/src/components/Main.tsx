@@ -3,17 +3,17 @@ import type { User } from "../typings/user";
 import { locale } from "../utils/locale";
 import type { TabsProps } from "../typings";
 
-type Card = { title: string; description: string; image: string };
+type Card = { title: string; description: string; image: string, card: TabsProps };
 
 const Main: React.FC<{
     user: User;
     changeTab: (tab: TabsProps) => void;
 }> = ({ user, changeTab }) => {
     const CARDS = [
-        { title: locale('blackmarket'), description: locale('blackmarket_description'), image: './images/pistol.png' },
-        { title: locale('heist_contracts'), description: locale('heist_contracts_description'), image: './images/hat.png' },
-        { title: locale('leaderboard'), description: locale('leaderboard_description'), image: './images/trophy.png' },
-        user.isAdmin && { title: locale('admin_menu'), description: locale('admin_menu_description'), image: './images/shield.png' }
+        { title: locale('blackmarket'), description: locale('blackmarket_description'), image: './images/pistol.png', card: 'blackmarket' },
+        { title: locale('heist_contracts'), description: locale('heist_contracts_description'), image: './images/hat.png', card: 'heists' },
+        { title: locale('leaderboard'), description: locale('leaderboard_description'), image: './images/trophy.png', card: 'leaderboard' },
+        user.isAdmin && { title: locale('admin_menu'), description: locale('admin_menu_description'), image: './images/shield.png', card: 'admin' }
     ].filter((card): card is Card => Boolean(card));
 
     const [index, setIndex] = useState(0);
@@ -47,7 +47,7 @@ const Main: React.FC<{
 
                 <div className="cards-wrapper">
                     {visibleCards.map((card, i) => (
-                        <div className="card" key={i}>
+                        <div className="card" key={i} onClick={() => changeTab(card.card)}>
                             <img src={card.image} />
 
                             <div>
