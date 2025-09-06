@@ -34,11 +34,11 @@ const Main: React.FC<{
             <div className="p-10 flex items-center justify-between">
                 <div className="text-4xl">
                     <p>{locale('welcome')},</p>
-                    <p className="font-medium text-5xl">{user.nickname}</p>
+                    <p className="font-medium text-5xl">{user.data.name}</p>
                 </div>
 
                 <div className="image-outline">
-                    <img src={user.image} />
+                    <img src={user.data.image} />
                 </div>
             </div>
 

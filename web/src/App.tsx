@@ -26,14 +26,17 @@ debugData<MainProps>([
     action: 'open_tablet',
     data: {
       user: {
-        nickname: 'PPaull.',
-        image: 'https://i.postimg.cc/BnFQFgrd/PRP.png',
         isAdmin: true,
-        firstLogged: '3/9/2025',
+        data: {
+          name: 'PPaull.',
+          image: 'https://i.postimg.cc/BnFQFgrd/PRP.png',
+          description: 'Dangerous mobster 🎩'
+        },
         stats: {
           coins: 103507,
           xp: 61550,
-          completedContracts: 11
+          completedContracts: 11,
+          firstLogged: '3/9/2025',
         }
       }
     }
