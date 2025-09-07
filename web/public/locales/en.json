@@ -18,5 +18,12 @@
     "change_name": "Change name",
     "image": "Profile picture",
     "image_description": "Your profile picture's url. The profile picture should abide the server rules.",
-    "change_image": "Change profile picture"
+    "change_image": "Change profile picture",
+    "contact_dealer": "Contact dealer",
+    "contact_dealer_description": "Do you have any belongings? Feel free to contact a dealer.",
+    "available": "Available",
+    "unavailable": "Unavailable",
+    "price": "Price",
+    "free": "Free",
+    "purchase_item": "Purchase item"
 }

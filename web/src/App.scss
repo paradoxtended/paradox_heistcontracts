@@ -280,3 +280,54 @@ main .main-container .card div {
     bottom: -5px;
     right: -5px;
 }
+
+/* Blackmarket */
+
+.blackmarket-contact {
+    width: 100%;
+    background: linear-gradient(135deg, #4a4aa8, #000000);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 25px;
+    border-top: solid #2c2c2c 1px;
+}
+
+.blackmarket-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #ffffff;
+}
+
+.blackmarket-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    overflow: auto;
+    overflow-x: hidden;
+    place-items: center;
+    height: 500px;
+    padding: 10px 20px;
+}
+
+.blackmarket-list::-webkit-scrollbar {
+    width: 0;
+}
+
+.blackmarket-item {
+    padding: 15px;
+    height: 100%;
+    background: radial-gradient(#00000050, #000000a0);
+    color: #ffffff;
+    border: solid #4747aa 1px;
+    box-shadow: 0 0 10px #00000050;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 8px;
+}
