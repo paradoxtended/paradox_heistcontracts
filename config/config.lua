@@ -12,6 +12,9 @@ Config.tabletItem = 'contract_tablet'
 -- You can find them in web/dist/locales
 Config.uiLanguage = 'en'
 
+-- Default spawn radius for entities
+Config.defaultRadius = 100.0
+
 -- The groups that can use /jobscreator, /uncuff, /edit
 Config.adminGroups = {
     ['admin'] = true,

@@ -7,6 +7,10 @@ author 'Paradoxtended'
 description 'An advanced heist contracts resource.'
 version '1.0.0'
 
+dependencies {
+    'paradox_bridge'
+}
+
 files {
     'locales/*.json',
     'web/dist/**/*',
@@ -22,10 +26,12 @@ shared_scripts {
 }
 
 client_scripts {
-    'utils/cl_main.lua',
-    'config/cl_edit.lua'
+    '@prp_lib/resource/callbacks/client/qb.lua',
+    '@prp_lib/resource/callbacks/client/esx.lua',
+    'config/cl_edit.lua',
 }
 
 server_scripts {
-    'utils/sv_main.lua'
+    '@prp_lib/resource/callbacks/server/qb.lua',
+    '@prp_lib/resource/callbacks/server/esx.lua',
 }

@@ -5,7 +5,7 @@ return {
         `mp_m_weapwork_01`
     },
     locations = {
-
+        vector4(695.9141, -960.0654, 23.9861, 93.0559)
     },
     items = {
         ['weapon_pistol'] = { 
