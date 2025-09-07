@@ -75,8 +75,8 @@ jobs:
         run: |
           mkdir -p ./temp/paradox_heistcontracts
           mkdir -p ./temp/paradox_heistcontracts/web
-          cp ./{README.md,LICENSE,fxmanifest.lua,init.lua,config.lua} ./temp/paradox_heistcontracts
-          cp -r ./{client,server,locales,install} ./temp/paradox_heistcontracts
+          cp ./{fxmanifest.lua,init.lua} ./temp/paradox_heistcontracts
+          cp -r ./{config,utils} ./temp/paradox_heistcontracts
           cp -r ./web/dist ./temp/paradox_heistcontracts/web/dist
           cd ./temp && zip -r ../paradox_heistcontracts.zip ./paradox_heistcontracts
 

@@ -1,0 +1,11 @@
+---@class BlackmarketItem
+---@field count number? Amount in stock
+---@field price { money?: number, coins?: number } | number? If price is number then it'll be considered as money
+---@field description string?
+---@field imageUrl string?
+---@field label string
+
+---@class Blackmarket
+---@field models string | string[] Dealer ped's model
+---@field locations vector4[]
+---@field items table<string, BlackmarketItem>

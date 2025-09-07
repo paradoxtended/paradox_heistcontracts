@@ -330,4 +330,17 @@ main .main-container .card div {
     flex-direction: column;
     justify-content: space-between;
     gap: 8px;
+    position: relative;
+    font-family: Roboto Mono;
+}
+
+.blackmarket-item::before {
+    position: absolute;
+    content: '';
+    height: 8px;
+    width: 8px;
+    background: #4747aa;
+    top: 5px;
+    left: 5px;
+    clip-path: polygon(0 0, 100% 0, 0 100%);
 }

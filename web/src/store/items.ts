@@ -28,7 +28,7 @@ export const Items: {
     hacking_laptop: {
       label: 'Laptop',
       image: 'https://i.postimg.cc/vBXLhyTD/laptop4.png',
-      description: 'Must have item. Hack every electric doors and other alarms.',
+      description: 'Must have item. Hack every electric doors and alarms.',
       price: { money: 35000, coins: 1000 },
       count: 0
     }

@@ -18,8 +18,8 @@ const Blackmarket: React.FC = () => {
                     const price = typeof item.price === 'object' ? formatPrice(item.price?.coins, item.price?.money) : formatPrice(undefined, item.price);
 
                     return (
-                        <div className="blackmarket-item" key={`blackmarket-item-${id}`}>
-                            <div className="font-[Courier] text-[#a7a7ff] flex justify-between items-start">
+                        <div className="blackmarket-item" key={`blackmarket-item-${key}`}>
+                            <div className="text-[#a7a7ff] flex justify-between items-start">
                                 <div>
                                     <p className="text-xs">ID: {String(id + 1).padStart(3, '0')}</p>
                                     <p className="font-bold text-lg leading-tight">{item.label}</p>
@@ -33,16 +33,16 @@ const Blackmarket: React.FC = () => {
                                 <img src={item.image} className="w-[90px] h-[90px] border-2 border-[#4747aa] p-3" />
                             </div>
 
-                            {item.description && <p className="text-center text-sm text-[#8c8cb8]">{item.description}</p>}
+                            {item.description && <p className="text-center text-sm text-[#8c8cb8] font-[Inter]">{item.description}</p>}
 
                             <div className="border-b border-[#4747aa]"></div>
 
-                            <div className="font-[Courier] text-[#a7a7ff] uppercase text-sm flex items-center justify-between">
+                            <div className="text-[#a7a7ff] uppercase text-sm flex items-center justify-between">
                                 <p>{locale('price')}:</p>
                                 <p className="font-black">{price}</p>
                             </div>
 
-                            <button className="font-[Courier] uppercase text-sm border border-[#4747aa] py-1.5 text-[#a7a7ff] bg-[#a7a7ff10] duration-300
+                            <button className="uppercase text-sm border border-[#4747aa] py-1.5 text-[#a7a7ff] bg-[#a7a7ff10] duration-300
                                 hover:bg-[#a7a7ff20]">
                                 [{locale('purchase_item')}]
                             </button>
