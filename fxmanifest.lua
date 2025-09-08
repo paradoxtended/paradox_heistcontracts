@@ -7,7 +7,7 @@ author 'Paradoxtended'
 description 'An advanced heist contracts resource.'
 version '1.0.0'
 
-dependencies {
+dependency {
     'paradox_bridge'
 }
 
@@ -36,3 +36,5 @@ server_scripts {
     '@paradox_bridge/framework/esx/server.lua',
     '@paradox_bridge/framework/qb/server.lua',
 }
+
+dependency '/assetpacks'
