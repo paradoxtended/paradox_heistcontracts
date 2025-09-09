@@ -1,6 +1,6 @@
 Config = {}
 
--- The command to open up the menu
+-- The command to open up the menu, set to false to disable this option
 -- Available only for admins, they can use this command instead of tablet item
 Config.command = 'heistcontracts'
 
@@ -12,11 +12,23 @@ Config.tabletItem = 'contract_tablet'
 -- You can find them in web/dist/locales
 Config.uiLanguage = 'en'
 
--- Default spawn radius for entities
-Config.defaultRadius = 100.0
+-- Default data for new users
+-- A new user will start with this properties
+Config.defaultData = {
+    image = 'https://i.postimg.cc/Fsn60FxN/profile-icon-design-free-vector.jpg',
+    coins = 0,
+    xp = 0
+}
 
--- The groups that can use /jobscreator, /uncuff, /edit
+-- The groups that can use /heistcontracts
 Config.adminGroups = {
     ['admin'] = true,
     ['god'] = true
+}
+
+-- Accounts for paying
+-- Used when paying for blackmarket items
+Config.accounts = {
+    'money',
+    'bank'
 }

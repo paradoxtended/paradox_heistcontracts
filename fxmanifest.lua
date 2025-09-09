@@ -29,12 +29,16 @@ client_scripts {
     '@paradox_bridge/framework/esx/client.lua',
     '@paradox_bridge/framework/qb/client.lua',
     'config/cl_edit.lua',
-    'client/utils.lua'
+    'client/main.lua',
+    'client/ped.lua'
 }
 
 server_scripts {
     '@paradox_bridge/framework/esx/server.lua',
     '@paradox_bridge/framework/qb/server.lua',
+    'config/sv_edit.lua',
+    'server/main.lua',
+    'server/ped.lua'
 }
 
 dependency '/assetpacks'

@@ -62,6 +62,10 @@ const App: React.FC = () => {
     setVisible(true);
   });
 
+  useNuiEvent('update_items', (data: { name: string, count: number }) => {
+      Items[data.name]!.count = data.count
+  })
+
   const closeTablet = () => {
     setVisible(false);
     fetchNui('close_tablet');

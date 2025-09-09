@@ -1,4 +1,5 @@
 import { Items } from "../store/items";
+import { fetchNui } from "../utils/fetchNui";
 import { locale } from "../utils/locale";
 
 const formatPrice = (coins?: number, money?: number) => {
@@ -9,6 +10,10 @@ const formatPrice = (coins?: number, money?: number) => {
 };
 
 const Blackmarket: React.FC = () => {
+    const buyItem = async (item: string) => {
+        await fetchNui('buy_item', item);
+    };
+
     return (
         <div>
             <div className="blackmarket-list">
@@ -43,7 +48,7 @@ const Blackmarket: React.FC = () => {
                             </div>
 
                             <button className="uppercase text-sm border border-[#4747aa] py-1.5 text-[#a7a7ff] bg-[#a7a7ff10] duration-300
-                                hover:bg-[#a7a7ff20]">
+                                hover:bg-[#a7a7ff20]" onClick={() => buyItem(key)}>
                                 [{locale('purchase_item')}]
                             </button>
                         </div>

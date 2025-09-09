@@ -1,3 +1,10 @@
 {
-    
+    "command_help": "Open up the contract tablet.",
+    "recieve_order": "Recieve order",
+    "sell_items": "Sell items",
+    "out_of_stock": "This item is out of stock.",
+    "not_enough_bank": "Not enough bank balance.",
+    "not_enough_money": "Not enough money.",
+    "not_enough_coins": "Not enough coins.",
+    "item_ordered": "The item was successfully ordered. Get to the dealer."
 }

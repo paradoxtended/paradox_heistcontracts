@@ -11,8 +11,9 @@ return {
         ['weapon_pistol'] = { 
             label = Utils.getItemLabel('weapon_pistol'),
             description = 'A reliable handgun for self-defense and tactical operations.',
-            imageUrl = Editable.getInventoryIcon('weapon_pistol'),
-            price = { coins = 500, money = 12500 }
+            image = Editable.getInventoryIcon('weapon_pistol'),
+            price = { coins = 500, money = 12500 },
+            count = 5
         }
     }
 }
