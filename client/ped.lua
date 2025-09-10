@@ -14,11 +14,12 @@ RegisterNUICallback('buy_item', function(itemName, cb)
     end
 end)
 
----@todo fetch current count (after purchased)
-RegisterNetEvent('paradox_contracts:updateItem', function(itemName)
+RegisterNetEvent('paradox_contracts:updateItem', function(itemName, count)
     local item = Blackmarket.items[itemName]
 
     if not item or not item.count then return end
+
+    item.count = count
 
     SendNUIMessage({
         action = 'update_items',

@@ -1,6 +1,8 @@
+import { useState } from "react";
 import { Items } from "../store/items";
 import { fetchNui } from "../utils/fetchNui";
 import { locale } from "../utils/locale";
+import useNuiEvent from "../utils/useNuiEvent";
 
 const formatPrice = (coins?: number, money?: number) => {
   const moneyStr = money && `$${money.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2, useGrouping: false })}`;
@@ -10,6 +12,14 @@ const formatPrice = (coins?: number, money?: number) => {
 };
 
 const Blackmarket: React.FC = () => {
+    // shitty var for rendering the component again :sadge:
+    const [, forceUpdate] = useState({});
+
+    useNuiEvent('update_items', (data: { name: string, count: number }) => {
+        Items[data.name]!.count = data.count;
+        forceUpdate({}); // ignore this (only for rerendering)
+    })
+
     const buyItem = async (item: string) => {
         await fetchNui('buy_item', item);
     };

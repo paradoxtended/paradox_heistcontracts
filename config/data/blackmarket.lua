@@ -14,6 +14,12 @@ return {
             image = Editable.getInventoryIcon('weapon_pistol'),
             price = { coins = 500, money = 12500 },
             count = 5
+        },
+        ['lockpick'] = {
+            label = Utils.getItemLabel('lockpick'),
+            description = 'A small tool which can get you through every door.',
+            image = Editable.getInventoryIcon('lockpick'),
+            price = 125
         }
     }
 }

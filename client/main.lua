@@ -55,6 +55,8 @@ RegisterNUICallback('close_tablet', function (_, cb)
 end)
 
 Framework.onPlayerLoaded(function()
+    Blackmarket = lib.callback.await('paradox_contracts:fetchBlackmarket', false)
+
     SetTimeout(500, function()
         SendNUIMessage({
             action = 'init',
