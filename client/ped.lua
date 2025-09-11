@@ -2,6 +2,40 @@ local Blackmarket = require 'config.data.blackmarket'
 
 if not Blackmarket then return end
 
+local function recieveOrder()
+    ---@type table<string, boolean>
+    local items = lib.callback.await('paradox_contracts:getOrderedItems', false)
+
+    if not items then
+        LR.notify(locale('havent_ordered'), 'error')
+        return
+    end
+
+    local options = {}
+
+    for itemName, _ in pairs(items) do
+        local item = Blackmarket.items[itemName]
+        table.insert(options, {
+            title = Utils.getItemLabel(itemName),
+            description = (type(item.price) == 'number' or (item.price.money and not item.price.coins)) and locale('item_description3', item.price)
+                    or item.price.coins and locale('item_description2', item.price.coins)
+                    or (item.price.money and item.price.coins) and locale('item_description', item.price.money, item.price.coins),
+            icon = Editable.getInventoryIcon(itemName),
+            image = Editable.getInventoryIcon(itemName),
+            onSelect = recieve,
+            args = itemName
+        })
+    end
+
+    lib.registerContext({
+        id = 'paradox_contracts:recieveMenu',
+        title = locale('recieve_order'),
+        options = options
+    })
+
+    lib.showContext('paradox_contracts:recieveMenu')
+end
+
 RegisterNUICallback('buy_item', function(itemName, cb)
     cb(1)
 

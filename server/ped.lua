@@ -55,3 +55,13 @@ end)
 lib.callback.register('paradox_contracts:fetchBlackmarket', function()
     return Blackmarket
 end)
+
+lib.callback.register('paradox_contracts:getOrderedItems', function(source)
+    local player = Framework.getPlayerFromId(source)
+
+    if not player then return end
+
+    local identifier = player:getIdentifier()
+
+    return stockOrders[identifier]
+end)

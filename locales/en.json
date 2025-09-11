@@ -7,5 +7,9 @@
     "not_enough_money": "Not enough money.",
     "not_enough_coins": "Not enough coins.",
     "item_ordered": "The item was successfully ordered. Get to the dealer.",
-    "item_already_ordered": "The item has been ordered already."
+    "item_already_ordered": "The item has been ordered already.",
+    "havent_ordered": "You haven't ordered anything.",
+    "item_description": "Click here to recieve for $%s and %s C",
+    "item_description2": "Click here to recieve for %s C",
+    "item_description3": "Click here to recieve for $%s"
 }
